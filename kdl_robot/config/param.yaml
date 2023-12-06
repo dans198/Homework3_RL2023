@@ -1,0 +1,16 @@
+Kd : 5
+
+Kp : 25
+Ko : 10
+Kdp : 10
+Kdo : 10
+traj_duration : 10
+acc_duration : 0.5
+init_time_slot : 1.0
+trajRadius : 0.1
+
+#default velocity profile = trapezoidal
+#linear trajectory if traj_circular = 0
+traj_circular : 1 
+#using joint-space controller if cartesian_cntrl = 0
+cartesian_cntrl : 1

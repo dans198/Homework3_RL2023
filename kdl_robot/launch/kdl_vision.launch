@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!--roslaunch aruco_ros usb_cam_aruco.launch camera:=/iiwa/camera1/-->
+    <arg name="camera" default="/iiwa/camera1"/>
+    <include file="$(find aruco_ros)/launch/usb_cam_aruco.launch">
+        <arg name="camera" value="$(arg camera)" />
+    </include>
+
+    <rosparam command="load" file="$(find kdl_ros_control)/config/param.yaml"/>
+
+    <!--rosrun kdl_ros_control kdl_robot_vision_control src/iiwa_stack/iiwa_description/urdf/iiwa7.urdf-->
+    <arg name="urdf" default="$(find iiwa_description)/urdf/iiwa7.urdf"/> 
+    <param name="urdf" value="$(arg urdf)"/>
+    <node name="kdl_ros_control_node" pkg="kdl_ros_control" type="kdl_robot_vision_control" output="screen"/>
+
+    <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
+        <remap from="image" to="/aruco_single/result"/>
+        <param name="autosize" value="true" />
+    </node>
+    	
+</launch>

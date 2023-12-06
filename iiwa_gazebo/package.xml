@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>iiwa_gazebo</name>
+  <version>1.4.0</version>
+  <description>This package allows to load a KUKA LBR IIWA robot onto Gazebo</description>
+  <author email="salvo.virga@tum.de">Salvo Virga</author>
+  <maintainer email="salvo.virga@tum.de">Salvo Virga</maintainer>
+
+  <license>BSD</license>
+
+  <exec_depend>message_runtime</exec_depend>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>sensor_msgs</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  
+  <depend>iiwa_description</depend>
+  <depend>gazebo_ros</depend>
+
+</package>
